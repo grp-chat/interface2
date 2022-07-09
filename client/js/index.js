@@ -459,6 +459,7 @@ sock.on('clrFill', data => {
             unSelTask.classList.remove('active');
         }
     }
+    
 
 });
 
