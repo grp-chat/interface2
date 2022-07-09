@@ -36,6 +36,8 @@ io.sockets.on('connection', function (sock) {
 
         sock.id = data;
 
+        io.emit('spliceArr', ServerVals.activeInd);
+
         var player = ServerVals.currTurn;
         io.emit('glow', player);
 
@@ -43,9 +45,10 @@ io.sockets.on('connection', function (sock) {
         var taskId = ServerVals.currSelTask;
         io.emit('clrFill', { taskId, unFill });
 
-        io.emit('spliceArr', ServerVals.activeInd);
+        var text = data + " connected"
+        io.emit('chat-to-clients', text);
 
-
+    
     });
 
     /* sock.id = Math.random();
